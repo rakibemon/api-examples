@@ -1,9 +1,9 @@
-const loadQuotes = ()=>{
+const loadQuote = ()=>{
     fetch('https://api.kanye.rest/')
     .then(response => response.json())
-    .then(data => displayQuotes(data))
+    .then(data => displayQuote(data))
 };
-const displayQuotes=(quotes)=>{
-    const quote= document.getElementById('quote');
-    quote.innerText=quotes.quote;
+const displayQuote=(quote)=>{
+    const quoteElement= document.getElementById('quote');
+    quoteElement.innerHTML=`<b>Quote</b> : ${quote.quote}`;
 }
